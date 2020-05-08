@@ -11,8 +11,6 @@ This extension allows users to assign roles to themselves while registering.
 
 ## Installation
 
-Use [Bazaar](https://discuss.flarum.org/d/5151) or install manually:
-
 ```bash
 composer require the-turk/flarum-regrole
 ```

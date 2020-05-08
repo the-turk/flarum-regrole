@@ -11,8 +11,6 @@ Bu eklenti, kullanıcıların kayıt sırasında kendilerine rol atayabilmelerin
 
 ## Kurulum
 
-[Bazaar](https://discuss.flarum.org/d/5151) kullanın ya da elle kurulum yapın:
-
 ```bash
 composer require the-turk/flarum-regrole
 ```
