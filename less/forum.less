@@ -1,0 +1,43 @@
+.regRole-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.regRole-item {
+  background: @body-bg;
+  margin: 10px 5px 10px;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+  border-radius: @border-radius;
+
+  & .regRole-badge {
+    padding-bottom: 5px;
+  }
+
+  & > label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    padding: 15px;
+    cursor: pointer;
+
+    & > input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &.active, &:hover {
+    background: lighten(@body-bg, 8%);
+  }
+}

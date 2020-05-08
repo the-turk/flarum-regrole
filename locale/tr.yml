@@ -1,0 +1,11 @@
+the-turk-regrole:
+    admin:
+      settings:
+        title:         Kayıt Sırasında Rol Ataması Ayarları
+        roleIds:       Atanabilen Roller
+        roleIdsHelp:   Kullanıcıların kendilerine hangi rolleri atayabileceğini seçin.
+        otherOptions:  Diğer Seçenekler
+        multipleRoles: Kullanıcıların kendilerine birden fazla rol atayabilmelerine izin ver
+        forceUsers:    Kullanıcıları kendilerine rol atamaya zorla
+    forum:
+      requiredRegRole: Bir kullanıcı grubu seçmelisiniz.
