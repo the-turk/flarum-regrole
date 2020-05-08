@@ -198,7 +198,7 @@ flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('the-turk-reg
         onchange: m.withAttr('checked', onchecked.bind(_this, group.id())),
         disabled: _this.loading
       }), group.nameSingular()));
-    }))), 10);
+    }))), 9);
   });
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_SignUpModal__WEBPACK_IMPORTED_MODULE_4___default.a.prototype, 'submitData', function (data) {
     data['regRole'] = this.regRole();

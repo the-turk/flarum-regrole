@@ -83,7 +83,7 @@ app.initializers.add('the-turk-regrole', () => {
             ))}
           </div>
       </div>,
-      10
+      9
     );
   });
 
