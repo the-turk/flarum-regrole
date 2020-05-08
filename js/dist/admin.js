@@ -234,12 +234,14 @@ var RegRoleSettingsModal = /*#__PURE__*/function (_SettingsModal) {
   _proto.dirty = function dirty() {
     var _this2 = this;
 
-    var dirty = {};
+    var dirty = {}; // holds allowed roles information
+
     var value_roleIds = JSON.stringify(this.roleIds);
 
     if (value_roleIds !== flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings[settingsPrefix + 'roleIds']) {
       dirty[settingsPrefix + 'roleIds'] = value_roleIds;
-    }
+    } // holds other options information
+
 
     Object.keys(this.settings).forEach(function (key) {
       var value = _this2.settings[key]();
