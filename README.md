@@ -1,33 +1,33 @@
-# Registration Roles
+# Kayıt Sırasında Rol Ataması
 
-This extension allows users to assign roles to themselves while registering.
+Bu eklenti, kullanıcıların kayıt sırasında kendilerine rol atayabilmelerini sağlar.
 
-![Registration Roles](https://i.ibb.co/bWjD9fJ/regrole.png)
+![Kayıt Sırasında Rol Ataması](https://i.ibb.co/bWjD9fJ/regrole.png)
 
-## Features
+## Özellikler
 
-- Allow users to have multiple roles assigned
-- Force users to assign at least one role to themselves
+- Kullanıcıların kendilerine birden fazla rol atayabilmelerine izin verin
+- Kullanıcıları kendilerine rol atamaya zorlayın
 
-## Installation
+## Kurulum
 
 ```bash
 composer require the-turk/flarum-regrole
 ```
 
-## Updating
+## Güncelleme
 
 ```bash
 composer update the-turk/flarum-regrole
 php flarum cache:clear
 ```
 
-## Usage
+## Kullanım
 
-Enable the extension and adjust the settings. You're ready to go!
+Eklentiyi aktif edin ve ayarları kurcalayın.
 
-## Links
+## Bağlantılar
 
-- [Source code on GitHub](https://github.com/the-turk/flarum-regrole)
-- [Changelog](https://github.com/the-turk/flarum-regrole/blob/master/CHANGELOG.md)
-- [Report an issue](https://github.com/the-turk/flarum-regrole/issues)
+- [GitHub üzerindeki kaynak kodu](https://github.com/the-turk/flarum-regrole)
+- [Değişiklikler](https://github.com/the-turk/flarum-regrole/blob/master/CHANGELOG.md)
+- [Sorun bildir](https://github.com/the-turk/flarum-regrole/issues)

@@ -1,7 +1,7 @@
 ### 0.1.1
 
-- **Fix** users were not updating from their profile pages.
+- Kullanıcıların profil sayfalarından güncellenememesi sorunu **düzeltildi**.
 
 ### 0.1.0
 
-Initial release.
+İlk sürüm.
