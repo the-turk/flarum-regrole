@@ -3,8 +3,29 @@ import app from 'flarum/app';
 import Group from 'flarum/models/Group';
 import GroupBadge from 'flarum/components/GroupBadge';
 import SignUpModal from 'flarum/components/SignUpModal';
+import Page from 'flarum/components/Page';
 
 app.initializers.add('the-turk-regrole', () => {
+	// extending Page to be sure that
+	// buttons will work everytime - even after an OAuth request
+	extend(Page.prototype, 'init', function () {
+			const $body = $('body');
+
+			$body.on('click', '.SignUpModal input[type=checkbox]', function () {
+				let $container = $(this).closest('.regRole-item');
+				if (!($container.hasClass('active'))) {
+					$container.addClass('active');
+
+					if (!(app.forum.attribute('regMultipleRoles'))) {
+						$container.siblings().removeClass('active');
+						$container.siblings().find('input[type=checkbox]').prop('checked', false);
+					}
+				} else {
+					$container.removeClass('active');
+				}
+			});
+  });
+
   extend(SignUpModal.prototype, 'init', function () {
       this.regRole = m.prop([]);
   });
@@ -68,21 +89,5 @@ app.initializers.add('the-turk-regrole', () => {
 
   extend(SignUpModal.prototype, 'submitData', function (data) {
       data['regRole'] = this.regRole();
-  });
-
-  extend(SignUpModal.prototype, 'onready', function () {
-      this.$('input[type=checkbox]').on('click', function () {
-        let $container = $(this).closest('.regRole-item');
-        if (!($container.hasClass('active'))) {
-          $container.addClass('active');
-          
-          if (!(app.forum.attribute('regMultipleRoles'))) {
-            $container.siblings().removeClass('active');
-            $container.siblings().find('input[type=checkbox]').prop('checked', false);
-          }
-        } else {
-          $container.removeClass('active');
-        }
-      });
   });
 });

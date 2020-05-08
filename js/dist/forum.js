@@ -120,12 +120,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_components_GroupBadge__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(flarum_components_GroupBadge__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var flarum_components_SignUpModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! flarum/components/SignUpModal */ "flarum/components/SignUpModal");
 /* harmony import */ var flarum_components_SignUpModal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(flarum_components_SignUpModal__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var flarum_components_Page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flarum/components/Page */ "flarum/components/Page");
+/* harmony import */ var flarum_components_Page__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(flarum_components_Page__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
 
 
 flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('the-turk-regrole', function () {
+  // extending Page to be sure that
+  // buttons will work everytime - even after an OAuth request
+  Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_Page__WEBPACK_IMPORTED_MODULE_5___default.a.prototype, 'init', function () {
+    var $body = $('body');
+    $body.on('click', '.SignUpModal input[type=checkbox]', function () {
+      var $container = $(this).closest('.regRole-item');
+
+      if (!$container.hasClass('active')) {
+        $container.addClass('active');
+
+        if (!flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('regMultipleRoles')) {
+          $container.siblings().removeClass('active');
+          $container.siblings().find('input[type=checkbox]').prop('checked', false);
+        }
+      } else {
+        $container.removeClass('active');
+      }
+    });
+  });
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_SignUpModal__WEBPACK_IMPORTED_MODULE_4___default.a.prototype, 'init', function () {
     this.regRole = m.prop([]);
   });
@@ -181,22 +203,6 @@ flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('the-turk-reg
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_SignUpModal__WEBPACK_IMPORTED_MODULE_4___default.a.prototype, 'submitData', function (data) {
     data['regRole'] = this.regRole();
   });
-  Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_SignUpModal__WEBPACK_IMPORTED_MODULE_4___default.a.prototype, 'onready', function () {
-    this.$('input[type=checkbox]').on('click', function () {
-      var $container = $(this).closest('.regRole-item');
-
-      if (!$container.hasClass('active')) {
-        $container.addClass('active');
-
-        if (!flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('regMultipleRoles')) {
-          $container.siblings().removeClass('active');
-          $container.siblings().find('input[type=checkbox]').prop('checked', false);
-        }
-      } else {
-        $container.removeClass('active');
-      }
-    });
-  });
 });
 
 /***/ }),
@@ -220,6 +226,17 @@ module.exports = flarum.core.compat['app'];
 /***/ (function(module, exports) {
 
 module.exports = flarum.core.compat['components/GroupBadge'];
+
+/***/ }),
+
+/***/ "flarum/components/Page":
+/*!********************************************************!*\
+  !*** external "flarum.core.compat['components/Page']" ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/Page'];
 
 /***/ }),
 
