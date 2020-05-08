@@ -2,7 +2,7 @@
 
 Bu eklenti, kullanıcıların kayıt sırasında kendilerine rol atayabilmelerini sağlar.
 
-![Kayıt Sırasında Rol Ataması](https://i.ibb.co/bWjD9fJ/regrole.png)
+![Kayıt Sırasında Rol Ataması](https://i.ibb.co/Q9gZXmY/regrole.png)
 
 ## Özellikler
 
