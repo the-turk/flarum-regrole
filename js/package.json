@@ -1,7 +1,6 @@
 {
   "name": "@the-turk/flarum-regrole",
   "description": "Allow users to assign roles to themselves while registering.",
-  "license": "MIT",
   "version": "0.1.0",
   "dependencies": {
     "flarum-webpack-config": "0.1.0-beta.10",
