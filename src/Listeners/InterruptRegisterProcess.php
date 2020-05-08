@@ -11,7 +11,6 @@ use Flarum\Api\Event\Serializing;
 use Flarum\Api\Serializer\ForumSerializer;
 use Illuminate\Support\Arr;
 use Flarum\Group\Group;
-use InvalidArgumentException;
 
 class InterruptRegisterProcess
 {
@@ -86,14 +85,14 @@ class InterruptRegisterProcess
      */
     public function whenSavingUser(UserSaving $event)
     {
-        self::$formIds = Arr::get($event->data, 'attributes.regRole');
+        $data = $event->data;
 
-        if (!is_array(self::$formIds)) {
-            throw new InvalidArgumentException();
-        }
+        if (Arr::has($data, 'attributes.regRole')) {
+            self::$formIds = Arr::get($data, 'attributes.regRole');
 
-        if ($this->forceUsers) {
-            $this->validator->assertValid(['regRole' => self::$formIds]);
+            if ($this->forceUsers) {
+                $this->validator->assertValid(['regRole' => self::$formIds]);
+            }
         }
     }
 
