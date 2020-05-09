@@ -10,7 +10,7 @@
  * @package    the-turk/flarum-regroles
  * @author     Hasan Özbey <hasanoozbey@gmail.com>
  * @copyright  2020
- * @version    Release: 0.1.0
+ * @version    Release: 0.1.3
  * @link       https://github.com/the-turk/flarum-regrole
  */
 
