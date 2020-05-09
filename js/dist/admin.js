@@ -181,7 +181,7 @@ var RegRoleSettingsModal = /*#__PURE__*/function (_SettingsModal) {
   _proto.init = function init() {
     _SettingsModal.prototype.init.call(this);
 
-    this.roleIds = m.prop(JSON.parse(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings[settingsPrefix + 'roleIds']) || [])();
+    this.roleIds = m.prop(JSON.parse(flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.data.settings[settingsPrefix + 'roleIds'] || '[]'))();
   };
 
   _proto.title = function title() {

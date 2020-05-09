@@ -12,7 +12,7 @@ export default class RegRoleSettingsModal extends SettingsModal {
     super.init();
 
     this.roleIds = m.prop(
-      JSON.parse(app.data.settings[settingsPrefix + 'roleIds']) || []
+	     JSON.parse(app.data.settings[settingsPrefix + 'roleIds'] || '[]')
     )();
   }
 

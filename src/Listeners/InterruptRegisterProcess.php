@@ -41,11 +41,11 @@ class InterruptRegisterProcess
         $this->validator = $validator;
 
         // Roles that users allowed to assign themselves
-        $this->roleIds =
+        $this->roleIds = (array)
             json_decode(
                 $settings->get(
                     'the-turk-regrole.roleIds',
-                    []
+                    '[]'
                 ),
                 true
             )
