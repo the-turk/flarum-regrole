@@ -16,6 +16,7 @@
   flex-grow: 1;
   text-align: center;
   border-radius: @border-radius;
+  border: 2px solid transparent;
 
   & .regRole-badge {
     padding-bottom: 5px;
@@ -38,6 +39,6 @@
   }
 
   &.active, &:hover {
-    background: lighten(@body-bg, 8%);
+    border-color: @secondary-color;
   }
 }
