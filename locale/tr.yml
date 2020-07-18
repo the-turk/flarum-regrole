@@ -8,4 +8,7 @@ the-turk-regrole:
         multipleRoles: Kullanıcıların kendilerine birden fazla rol atayabilmelerine izin ver
         forceUsers:    Kullanıcıları kendilerine rol atamaya zorla
     forum:
+      chooseRole:      Bir Grup Seçin
+      chooseRoleHelp:  Forumu kullanmaya devam etmek için bir kullanıcı grubu seçmelisiniz.
       requiredRegRole: Bir kullanıcı grubu seçmelisiniz.
+      save:            => core.ref.save_changes

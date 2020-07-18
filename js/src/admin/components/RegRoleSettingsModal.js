@@ -3,7 +3,6 @@ import SettingsModal from 'flarum/components/SettingsModal';
 import Group from 'flarum/models/Group';
 import Switch from 'flarum/components/Switch';
 
-// just to make things easier
 const settingsPrefix = 'the-turk-regrole.';
 const localePrefix = settingsPrefix + 'admin.settings.';
 
@@ -11,9 +10,7 @@ export default class RegRoleSettingsModal extends SettingsModal {
   init() {
     super.init();
 
-    this.roleIds = m.prop(
-	     JSON.parse(app.data.settings[settingsPrefix + 'roleIds'] || '[]')
-    )();
+    this.roleIds = m.prop(JSON.parse(app.data.settings[settingsPrefix + 'roleIds'] || '[]'))();
   }
 
   title() {
@@ -28,24 +25,21 @@ export default class RegRoleSettingsModal extends SettingsModal {
   form() {
     return [
       m('.Form-group', [
-          m('label', app.translator.trans(localePrefix + 'roleIds')),
-          m('.helpText', app.translator.trans(localePrefix + 'roleIdsHelp')),
-          m('div', [
-            app.store
-              .all('groups')
-              .filter((group) =>
-                [
-                  Group.GUEST_ID,
-                  Group.MEMBER_ID,
-                  Group.ADMINISTRATOR_ID
-                ].indexOf(group.id()) === -1)
-              .map((group) => (
-                m('.Form-group', [
-                  m('label', Switch.component({
+        m('label', app.translator.trans(localePrefix + 'roleIds')),
+        m('.helpText', app.translator.trans(localePrefix + 'roleIdsHelp')),
+        m('div', [
+          app.store
+            .all('groups')
+            .filter((group) => [Group.GUEST_ID, Group.MEMBER_ID, Group.ADMINISTRATOR_ID].indexOf(group.id()) === -1)
+            .map((group) =>
+              m('.Form-group', [
+                m(
+                  'label',
+                  Switch.component({
                     state: this.roleIds.indexOf(group.id()) > -1,
                     children: group.nameSingular(),
-                    onchange: value => {
-                      if(value) {
+                    onchange: (value) => {
+                      if (value) {
                         // add new role id
                         this.roleIds.push(group.id());
                       } else {
@@ -55,33 +49,40 @@ export default class RegRoleSettingsModal extends SettingsModal {
                           this.roleIds.splice(index, 1);
                         }
                       }
-                    }
-                  }))
-                ])
-              ))
-          ])
+                    },
+                  })
+                ),
+              ])
+            ),
+        ]),
       ]),
       m('.Form-group', [
         m('label', app.translator.trans(localePrefix + 'otherOptions')),
         m('.Form-group', [
-          m('label', Switch.component({
-            state: this.setting(settingsPrefix + 'multipleRoles', '0')() === '1',
-            children: app.translator.trans(localePrefix + 'multipleRoles'),
-            onchange: value => {
-              this.setting(settingsPrefix + 'multipleRoles')(value ? '1' : '0');
-            }
-          }))
+          m(
+            'label',
+            Switch.component({
+              state: this.setting(settingsPrefix + 'multipleRoles', '0')() === '1',
+              children: app.translator.trans(localePrefix + 'multipleRoles'),
+              onchange: (value) => {
+                this.setting(settingsPrefix + 'multipleRoles')(value ? '1' : '0');
+              },
+            })
+          ),
         ]),
         m('.Form-group', [
-          m('label', Switch.component({
-            state: this.setting(settingsPrefix + 'forceUsers', '0')() === '1',
-            children: app.translator.trans(localePrefix + 'forceUsers'),
-            onchange: value => {
-              this.setting(settingsPrefix + 'forceUsers')(value ? '1' : '0');
-            }
-          }))
-        ])
-      ])
+          m(
+            'label',
+            Switch.component({
+              state: this.setting(settingsPrefix + 'forceUsers', '0')() === '1',
+              children: app.translator.trans(localePrefix + 'forceUsers'),
+              onchange: (value) => {
+                this.setting(settingsPrefix + 'forceUsers')(value ? '1' : '0');
+              },
+            })
+          ),
+        ]),
+      ]),
     ];
   }
 

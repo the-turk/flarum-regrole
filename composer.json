@@ -1,12 +1,13 @@
 {
   "name": "the-turk/flarum-regrole",
-  "description": "Allow users to assign roles to themselves while registering.",
+  "description": "Allow users to assign roles to themselves during registration.",
   "keywords": [
     "flarum",
     "registration",
     "role"
   ],
   "type": "flarum-extension",
+  "license": "MIT",
   "authors": [{
     "name": "Hasan Özbey",
     "email": "hasanoozbey@gmail.com",
