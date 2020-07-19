@@ -2,7 +2,7 @@
 
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/the-turk/flarum-regrole/blob/master/LICENSE) [![Latest Stable Version](https://img.shields.io/packagist/v/the-turk/flarum-regrole.svg)](https://packagist.org/packages/the-turk/flarum-regrole) [![Total Downloads](https://img.shields.io/packagist/dt/the-turk/flarum-regrole.svg)](https://packagist.org/packages/the-turk/flarum-regrole)
 
-Allow users to assign roles to themselves during registration. You can also force existing users to assign roles to themselves.
+Allow users to assign roles to themselves during registration. You can also force existing users.
 
 ![Registration Roles](https://i.ibb.co/KhFp3hQ/reg-Role-Sign-Up-Modal.png)
 
