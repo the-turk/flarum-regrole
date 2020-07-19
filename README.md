@@ -29,7 +29,7 @@ Enable the extension and set allowed roles from the extension's settings modal. 
 
 ## Links
 
-- [Flarum Discuss post](https://discuss.flarum.org/)
+- [Flarum Discuss post](https://discuss.flarum.org/d/24500-registration-roles)
 - [Source code on GitHub](https://github.com/the-turk/flarum-regrole)
 - [Changelog](https://github.com/the-turk/flarum-regrole/blob/master/CHANGELOG.md)
 - [Report an issue](https://github.com/the-turk/flarum-regrole/issues)
