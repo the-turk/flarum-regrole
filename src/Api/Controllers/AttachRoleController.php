@@ -1,10 +1,10 @@
 <?php
 
-namespace TheTurk\RegRole\Api\Controllers;
+namespace IanM\RegRole\Api\Controllers;
 
 use Flarum\Api\Controller\AbstractShowController;
 use Illuminate\Contracts\Bus\Dispatcher;
-use TheTurk\RegRole\Commands\AttachRole;
+use IanM\RegRole\Commands\AttachRole;
 use Illuminate\Support\Arr;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;

@@ -14,12 +14,11 @@
  * @link       https://github.com/the-turk/flarum-regrole
  */
 
-namespace TheTurk\RegRole;
+namespace IanM\RegRole;
 
 use Flarum\Extend;
-use Illuminate\Contracts\Events\Dispatcher;
-use TheTurk\RegRole\Api\Controllers\AttachRoleController;
-use TheTurk\RegRole\Listeners\SetRoles;
+use Flarum\User\Event\Saving as UserSaving;
+use IanM\RegRole\Api\Controllers\AttachRoleController;
 
 return [
     (new Extend\Routes('api'))
@@ -31,7 +30,20 @@ return [
         ->js(__DIR__ . '/js/dist/admin.js'),
     (new Extend\Locales(__DIR__ . '/locale')),
 
-    function (Dispatcher $events) {
-        $events->subscribe(SetRoles::class);
-    }
+    (new Extend\Event())
+        ->listen(UserSaving::class, Listeners\SetRoles::class),
+
+    (new Extend\Settings())
+        ->serializeToForum('safeRoles', 'the-turk-regrole.roleIds', function ($value) {
+            if (null === $value) {
+                return [];
+            }
+            return json_decode($value, true);
+        })
+        ->serializeToForum('multipleRoles', 'the-turk-regrole.multipleRoles', function ($value) {
+            return (bool) $value;
+        })
+        ->serializeToForum('forceUsers', 'the-turk-regrole.forceUsers', function ($value) {
+            return (bool) $value;
+        }),
 ];

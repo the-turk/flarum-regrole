@@ -1,6 +1,6 @@
 <?php
 
-namespace TheTurk\RegRole\Commands;
+namespace IanM\RegRole\Commands;
 
 use Flarum\User\User;
 

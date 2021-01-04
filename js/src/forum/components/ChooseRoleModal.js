@@ -2,34 +2,29 @@ import Modal from 'flarum/components/Modal';
 import Button from 'flarum/components/Button';
 import GroupBadge from 'flarum/components/GroupBadge';
 import ItemList from 'flarum/utils/ItemList';
+import Stream from 'flarum/utils/Stream';
 
 /**
  * The `ChooseRoleModal` component displays a modal dialog with allowed roles.
  */
 export default class ChooseRoleModal extends Modal {
-  init() {
-    super.init();
+  oninit(vnode) {
+    super.oninit(vnode);
 
-    const user = this.props.user;
+    const user = this.attrs.user;
 
     this.showing = false;
 
-    this.regRole = m.prop([]);
+    this.regRole = Stream([]);
 
-    this.username = m.prop(user.username() || '');
+    this.username = Stream(user.username() || '');
   }
 
   isDismissible() {
     return false;
   }
 
-  config(isInitialized) {
-    // Workaround for missing 'in' class on .ModalManager
-    // @see https://github.com/flarum/core/pull/2080
-    if (this.showing && !$('.ModalManager').hasClass('in')) $('.ModalManager').addClass('in');
-
-    if (isInitialized) return;
-
+  oncreate(vnode) {
     this.showing = true;
   }
 

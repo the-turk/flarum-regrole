@@ -1,6 +1,6 @@
 <?php
 
-namespace TheTurk\RegRole\Commands;
+namespace IanM\RegRole\Commands;
 
 use Flarum\Foundation\DispatchEventsTrait;
 use Flarum\User\Event\Saving;

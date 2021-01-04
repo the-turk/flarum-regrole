@@ -1,15 +1,12 @@
 <?php
-namespace TheTurk\RegRole\Listeners;
+namespace IanM\RegRole\Listeners;
 
 use Flarum\Settings\SettingsRepositoryInterface;
 use Flarum\User\Exception\PermissionDeniedException;
 use Flarum\User\Event\GroupsChanged;
-use TheTurk\RegRole\Validators\RoleValidator;
-use Illuminate\Contracts\Events\Dispatcher;
+use IanM\RegRole\Validators\RoleValidator;
 use Flarum\User\User;
 use Flarum\User\Event\Saving as UserSaving;
-use Flarum\Api\Event\Serializing;
-use Flarum\Api\Serializer\ForumSerializer;
 use Illuminate\Support\Arr;
 
 class SetRoles
@@ -43,20 +40,9 @@ class SetRoles
     }
 
     /**
-     * Subscribes to the Flarum events
-     *
-     * @param Dispatcher $events
-     */
-    public function subscribe(Dispatcher $events)
-    {
-        $events->listen(UserSaving::class, [$this, 'whenSavingUser']);
-        $events->listen(Serializing::class, [$this, 'prepareApiAttributes']);
-    }
-
-    /**
      * @param UserSaving $event
      */
-    public function whenSavingUser(UserSaving $event)
+    public function handle(UserSaving $event)
     {
         $user = $event->user;
         $roleIds = Arr::get($event->data, 'attributes.regRole');
@@ -96,21 +82,6 @@ class SetRoles
                 });
               }
             }
-        }
-    }
-
-    /**
-     * Get settings from the database
-     * and make them available in the forum
-     *
-     * @param Serializing $event
-     */
-    public function prepareApiAttributes(Serializing $event)
-    {
-        if ($event->isSerializer(ForumSerializer::class)) {
-            $event->attributes['safeRoles'] = $this->safeRoles;
-            $event->attributes['multipleRoles'] = $this->multipleRoles;
-            $event->attributes['forceUsers'] = $this->forceUsers;
         }
     }
 }

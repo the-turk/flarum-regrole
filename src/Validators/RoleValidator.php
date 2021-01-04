@@ -1,6 +1,6 @@
 <?php
 
-namespace TheTurk\RegRole\Validators;
+namespace IanM\RegRole\Validators;
 
 use Flarum\Foundation\AbstractValidator;
 

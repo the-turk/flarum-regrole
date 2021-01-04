@@ -4,9 +4,10 @@ import Group from 'flarum/models/Group';
 import SignUpModal from 'flarum/components/SignUpModal';
 import ChooseRoleModal from './components/ChooseRoleModal';
 import Page from 'flarum/components/Page';
+import Stream from 'flarum/utils/Stream';
 
-app.initializers.add('the-turk-regrole', () => {
-  extend(Page.prototype, 'init', function () {
+app.initializers.add('ianm-regrole', () => {
+  extend(Page.prototype, 'oninit', function () {
     if (app.forum.attribute('forceUsers')) {
       const user = app.session.user;
 
@@ -16,7 +17,7 @@ app.initializers.add('the-turk-regrole', () => {
         if (!isAdmin) {
           const hasRole = user.groups().filter((group) => app.forum.attribute('safeRoles').indexOf(group.id()) > -1).length;
 
-          if (!hasRole) app.modal.show(new ChooseRoleModal({ user }));
+          if (!hasRole) app.modal.show(ChooseRoleModal, { user });
         }
       }
     }
@@ -40,8 +41,8 @@ app.initializers.add('the-turk-regrole', () => {
     });
   });
 
-  extend(SignUpModal.prototype, 'init', function () {
-    this.regRole = m.prop([]);
+  extend(SignUpModal.prototype, 'oninit', function () {
+    this.regRole = Stream([]);
   });
 
   extend(SignUpModal.prototype, 'fields', function (items) {
