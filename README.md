@@ -2,6 +2,12 @@
 
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/imorland/flarum-regrole/blob/master/LICENSE) [![Latest Stable Version](https://img.shields.io/packagist/v/ianm/flarum-regrole.svg)](https://packagist.org/packages/ianm/flarum-regrole) [![Total Downloads](https://img.shields.io/packagist/dt/ianm/flarum-regrole.svg)](https://packagist.org/packages/ianm/flarum-regrole)
 
+## This is a temporary maintained fork
+
+> I have [volunteered](https://discuss.flarum.org/d/22779-diff-for-flarum/136) to maintain this extension whilst [Kylo / the-turk is away](https://discuss.flarum.org/d/22779-diff-for-flarum/132). My hope is that this fork can be re-integrated in due course.
+
+> ~ IanM - January 2021
+
 Allow users to assign roles to themselves during registration. You can also force existing users.
 
 ![Registration Roles](https://i.ibb.co/KhFp3hQ/reg-Role-Sign-Up-Modal.png)
