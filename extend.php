@@ -38,10 +38,6 @@ return [
 
             return json_decode($value, true);
         })
-        ->serializeToForum('multipleRoles', 'the-turk-regrole.multipleRoles', function ($value) {
-            return (bool) $value;
-        })
-        ->serializeToForum('forceUsers', 'the-turk-regrole.forceUsers', function ($value) {
-            return (bool) $value;
-        }),
+        ->serializeToForum('multipleRoles', 'the-turk-regrole.multipleRoles', 'boolVal')
+        ->serializeToForum('forceUsers', 'the-turk-regrole.forceUsers', 'boolVal'),
 ];

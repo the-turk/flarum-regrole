@@ -1,8 +1,8 @@
-import app from 'flarum/app';
-import ExtensionPage from 'flarum/components/ExtensionPage';
-import Group from 'flarum/models/Group';
-import Switch from 'flarum/components/Switch';
-import Stream from 'flarum/utils/Stream';
+import app from 'flarum/admin/app';
+import ExtensionPage from 'flarum/admin/components/ExtensionPage';
+import Group from 'flarum/common/models/Group';
+import Switch from 'flarum/common/components/Switch';
+import Stream from 'flarum/common/utils/Stream';
 
 const settingsPrefix = 'the-turk-regrole.';
 const localePrefix = settingsPrefix + 'admin.settings.';

@@ -17,7 +17,7 @@ Allow users to assign roles to themselves during registration. You can also forc
 ## Installation
 
 ```bash
-composer require ianm/flarum-regrole
+composer require ianm/flarum-regrole:"*"
 ```
 
 ## Updating
