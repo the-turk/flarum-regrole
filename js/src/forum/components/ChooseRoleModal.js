@@ -26,7 +26,7 @@ export default class ChooseRoleModal extends Modal {
 
   oncreate(vnode) {
     super.oncreate(vnode);
-    
+
     this.showing = true;
   }
 
