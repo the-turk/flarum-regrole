@@ -1,10 +1,10 @@
-import { extend } from 'flarum/extend';
-import app from 'flarum/app';
-import Group from 'flarum/models/Group';
-import SignUpModal from 'flarum/components/SignUpModal';
+import { extend } from 'flarum/common/extend';
+import app from 'flarum/forum/app';
+import Group from 'flarum/common/models/Group';
+import SignUpModal from 'flarum/forum/components/SignUpModal';
 import ChooseRoleModal from './components/ChooseRoleModal';
-import Page from 'flarum/components/Page';
-import Stream from 'flarum/utils/Stream';
+import Page from 'flarum/common/components/Page';
+import Stream from 'flarum/common/utils/Stream';
 
 app.initializers.add('ianm-regrole', () => {
   extend(Page.prototype, 'oninit', function () {

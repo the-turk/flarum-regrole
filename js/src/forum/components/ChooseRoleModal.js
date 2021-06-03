@@ -1,8 +1,8 @@
-import Modal from 'flarum/components/Modal';
-import Button from 'flarum/components/Button';
-import GroupBadge from 'flarum/components/GroupBadge';
-import ItemList from 'flarum/utils/ItemList';
-import Stream from 'flarum/utils/Stream';
+import Modal from 'flarum/common/components/Modal';
+import Button from 'flarum/common/components/Button';
+import GroupBadge from 'flarum/forum/components/GroupBadge';
+import ItemList from 'flarum/common/utils/ItemList';
+import Stream from 'flarum/common/utils/Stream';
 
 /**
  * The `ChooseRoleModal` component displays a modal dialog with allowed roles.
@@ -25,6 +25,8 @@ export default class ChooseRoleModal extends Modal {
   }
 
   oncreate(vnode) {
+    super.oncreate(vnode);
+
     this.showing = true;
   }
 
