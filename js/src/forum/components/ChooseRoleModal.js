@@ -46,7 +46,8 @@ export default class ChooseRoleModal extends Modal {
 
   roleField() {
     return (
-      <div className="Form-group">
+      <div className="Form-group regRole-group">
+        <label className="regRole--label">{app.translator.trans('the-turk-regrole.forum.chooseRole')}</label>
         <div className="regRole-container">
           {app.store
             .all('groups')

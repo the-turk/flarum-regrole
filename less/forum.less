@@ -1,3 +1,24 @@
+.ChooseRoleModal .regRole--label {
+  display: none !important;
+}
+
+.regRole-group .regRole--label {
+  margin: 0;
+  font-weight: normal;
+  color: @control-color;
+  text-align: left;
+  padding-left: 8px;
+  text-transform: lowercase;
+
+  &:first-letter {
+    text-transform: capitalize
+  }
+
+  &:after {
+    content: ":";
+  }
+}
+
 .regRole-container {
   display: -ms-flexbox;
   display: flex;
