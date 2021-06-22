@@ -1,6 +1,6 @@
-import app from 'flarum/app';
-import RegRoleSettingsModal from './components/RegRoleSettingsModal';
+import app from 'flarum/admin/app';
+import RegRoleSettingsPage from './components/RegRoleSettingsPage';
 
-app.initializers.add('the-turk/regrole', (app) => {
-  app.extensionSettings['the-turk-regrole'] = () => app.modal.show(new RegRoleSettingsModal());
+app.initializers.add('the-turk-regrole', (app) => {
+  app.extensionData.for('the-turk-regrole').registerPage(RegRoleSettingsPage);
 });

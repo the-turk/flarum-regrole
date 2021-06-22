@@ -1,14 +1,25 @@
 <?php
 
+/*
+ * This file is part of the-turk/flarum-regrole.
+ *
+ * Copyright (c) 2021 Hasan Özbey
+ * Copyright (c) 2021 IanM
+ *
+ * LICENSE: For the full copyright and license information,
+ * please view the LICENSE.md file that was distributed
+ * with this source code.
+ */
+
 namespace TheTurk\RegRole\Api\Controllers;
 
 use Flarum\Api\Controller\AbstractShowController;
-use Illuminate\Contracts\Bus\Dispatcher;
+use Flarum\Api\Serializer\CurrentUserSerializer;
 use TheTurk\RegRole\Commands\AttachRole;
+use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Arr;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
-use Flarum\Api\Serializer\CurrentUserSerializer;
 
 class AttachRoleController extends AbstractShowController
 {

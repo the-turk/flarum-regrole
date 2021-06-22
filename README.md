@@ -11,7 +11,7 @@ Allow users to assign roles to themselves during registration. You can also forc
 ## Installation
 
 ```bash
-composer require the-turk/flarum-regrole
+composer require the-turk/flarum-regrole:"*"
 ```
 
 ## Updating
@@ -23,7 +23,7 @@ php flarum cache:clear
 
 ## Usage
 
-Enable the extension and set allowed roles from the extension's settings modal. Also enable the "Force users to assign at least one role to themselves" option to force guests as well as existing users (admins will be excluded) to have at least one of these allowed roles.
+Enable the extension and set allowed roles from the extension's settings. Also enable the "Force users to assign at least one role to themselves" option to force guests as well as existing users (admins will be excluded) to have at least one of these allowed roles.
 
 **! Attention:** I've tested this extension as much as I can. However, any malfunction of this extension may cause fatal errors during registration and your users might be unable to use your forum. So please test it yourself (register to your forum and login as existing user if you're forcing them to choose a role) after installation to see if everything is working fine for everyone.
 
