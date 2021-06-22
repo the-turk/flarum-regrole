@@ -11,7 +11,7 @@ app.initializers.add('the-turk-regrole', () => {
     if (app.forum.attribute('forceUsers')) {
       const user = app.session.user;
 
-      if (user) {
+      if (user && app.forum.attribute('canStartDiscussion')) {
         const isAdmin = user.groups().filter((group) => [Group.ADMINISTRATOR_ID].indexOf(group.id()) > -1).length;
 
         if (!isAdmin) {
