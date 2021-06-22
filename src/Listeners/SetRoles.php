@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of ianm/flarum-regrole.
+ * This file is part of the-turk/flarum-regrole.
  *
- * Copyright (c) 2020 Hasan Özbey
+ * Copyright (c) 2021 Hasan Özbey
  * Copyright (c) 2021 IanM
  *
  * LICENSE: For the full copyright and license information,
@@ -11,14 +11,14 @@
  * with this source code.
  */
 
-namespace IanM\RegRole\Listeners;
+namespace TheTurk\RegRole\Listeners;
 
 use Flarum\Settings\SettingsRepositoryInterface;
 use Flarum\User\Event\GroupsChanged;
 use Flarum\User\Event\Saving as UserSaving;
 use Flarum\User\Exception\PermissionDeniedException;
 use Flarum\User\User;
-use IanM\RegRole\Validators\RoleValidator;
+use TheTurk\RegRole\Validators\RoleValidator;
 use Illuminate\Support\Arr;
 
 class SetRoles

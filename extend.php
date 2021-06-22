@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of ianm/flarum-regrole.
+ * This file is part of the-turk/flarum-regrole.
  *
  * Copyright (c) 2020 Hasan Özbey
  * Copyright (c) 2021 IanM
@@ -11,11 +11,11 @@
  * with this source code.
  */
 
-namespace IanM\RegRole;
+namespace TheTurk\RegRole;
 
 use Flarum\Extend;
 use Flarum\User\Event\Saving as UserSaving;
-use IanM\RegRole\Api\Controllers\AttachRoleController;
+use TheTurk\RegRole\Api\Controllers\AttachRoleController;
 
 return [
     (new Extend\Routes('api'))

@@ -1,5 +1,5 @@
 {
-  "name": "ianm/flarum-regrole",
+  "name": "the-turk/flarum-regrole",
   "description": "Allow users to assign roles to themselves during registration.",
   "keywords": [
     "flarum",
@@ -20,8 +20,8 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/imorland/flarum-regrole/issues",
-    "source": "https://github.com/imorland/flarum-regrole",
+    "issues": "https://github.com/the-turk/flarum-regrole/issues",
+    "source": "https://github.com/the-turk/flarum-regrole",
     "forum": "https://discuss.flarum.org/d/24500"
   },
   "require": {
@@ -29,7 +29,7 @@
   },
   "autoload": {
     "psr-4": {
-      "IanM\\RegRole\\": "src/"
+      "TheTurk\\RegRole\\": "src/"
     }
   },
   "replace":{

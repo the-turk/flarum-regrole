@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of ianm/flarum-regrole.
+ * This file is part of the-turk/flarum-regrole.
  *
- * Copyright (c) 2020 Hasan Özbey
+ * Copyright (c) 2021 Hasan Özbey
  * Copyright (c) 2021 IanM
  *
  * LICENSE: For the full copyright and license information,
@@ -11,11 +11,11 @@
  * with this source code.
  */
 
-namespace IanM\RegRole\Api\Controllers;
+namespace TheTurk\RegRole\Api\Controllers;
 
 use Flarum\Api\Controller\AbstractShowController;
 use Flarum\Api\Serializer\CurrentUserSerializer;
-use IanM\RegRole\Commands\AttachRole;
+use TheTurk\RegRole\Commands\AttachRole;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Arr;
 use Psr\Http\Message\ServerRequestInterface;

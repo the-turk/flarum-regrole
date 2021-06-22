@@ -6,7 +6,7 @@ import ChooseRoleModal from './components/ChooseRoleModal';
 import Page from 'flarum/common/components/Page';
 import Stream from 'flarum/common/utils/Stream';
 
-app.initializers.add('ianm-regrole', () => {
+app.initializers.add('the-turk-regrole', () => {
   extend(Page.prototype, 'oninit', function () {
     if (app.forum.attribute('forceUsers')) {
       const user = app.session.user;
