@@ -122,7 +122,7 @@ export default class ChooseRoleModal extends Modal {
       .request({
         url: `${app.forum.attribute('apiUrl')}/regrole`,
         method: 'POST',
-        data: { regRoleIds: this.regRole() },
+        body: { regRoleIds: this.regRole() },
         errorHandler: this.onerror.bind(this),
       })
       .then(() => {
