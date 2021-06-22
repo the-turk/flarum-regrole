@@ -1,3 +1,9 @@
+### 1.0.2
+- **Fix** nested `m.redraw.sync()` call error. (issue #10)
+- **Fix** existing users can't choose a role even when they forced to. (issue #11)
+- **Fix** restricted users can self-assign roles when users forced to have at least one role. (issue #12)
+- **Add** customizable helper text for the sign-up modal. (issue #1)
+
 ### 1.0.1
 - **Pull** commits from @imorland's fork.
 
