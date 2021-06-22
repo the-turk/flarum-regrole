@@ -8,6 +8,8 @@ import Stream from 'flarum/common/utils/Stream';
  * The `ChooseRoleModal` component displays a modal dialog with allowed roles.
  */
 export default class ChooseRoleModal extends Modal {
+  static isDismissible = false;
+
   oninit(vnode) {
     super.oninit(vnode);
 
@@ -18,10 +20,6 @@ export default class ChooseRoleModal extends Modal {
     this.regRole = Stream([]);
 
     this.username = Stream(user.username() || '');
-  }
-
-  isDismissible() {
-    return false;
   }
 
   oncreate(vnode) {
