@@ -17,7 +17,7 @@ app.initializers.add('the-turk-regrole', () => {
         if (!isAdmin) {
           const hasRole = user.groups().filter((group) => app.forum.attribute('safeRoles').indexOf(group.id()) > -1).length;
 
-          if (!hasRole) app.modal.show(ChooseRoleModal, { user });
+          if (!hasRole) setTimeout(() => app.modal.show(ChooseRoleModal, { user }), 0);
         }
       }
     }
