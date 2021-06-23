@@ -32,9 +32,6 @@
       "TheTurk\\RegRole\\": "src/"
     }
   },
-  "replace":{
-    "the-turk/flarum-regrole": "*"
-  },
   "extra": {
     "flarum-extension": {
       "title": "Registration Roles",
