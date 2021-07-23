@@ -1,3 +1,15 @@
+### 1.0.3
+
+![alert](https://i.imgur.com/ecW3kCU.png)
+
+From now on, forced users users will be suspended until they choose a role (users with "Edit user groups" permission will be excluded).
+
+- **Fix** hidden groups were not choosable through the extension.
+- **Fix** `GroupsChanged` event was not firing. Now you can see users actions through logger extensions (like the "Audit Log").
+- **Add** compatibility for `flarum/suspend` so suspended users will be excluded from this extension's functions.
+
+Other changes involves changing of control mechanisms, code standardization, small improvements on styling etc.
+
 ### 1.0.2
 - **Fix** nested `m.redraw.sync()` call error. (issue #10)
 - **Fix** existing users can't choose a role even when they forced to. (issue #11)

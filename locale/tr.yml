@@ -1,14 +1,45 @@
 the-turk-regrole:
-    admin:
-      settings:
-        title:         Kayıt Sırasında Rol Ataması Ayarları
-        roleIds:       Atanabilen Roller
-        roleIdsHelp:   Kullanıcıların kendilerine hangi rolleri atayabileceğini seçin.
-        otherOptions:  Diğer Seçenekler
-        multipleRoles: Kullanıcıların kendilerine birden fazla rol atayabilmelerine izin ver
-        forceUsers:    Kullanıcıları kendilerine rol atamaya zorla
-    forum:
-      chooseRole:      Bir Grup Seçin
-      chooseRoleHelp:  Forumu kullanmaya devam etmek için bir kullanıcı grubu seçmelisiniz.
-      requiredRegRole: Bir kullanıcı grubu seçmelisiniz.
-      save:            => core.ref.save_changes
+
+  ##
+  # UNIQUE KEYS - The following keys are used in only one location each.
+  ##
+
+  # Translations in this namespace are used by the admin interface.
+  admin:
+
+    # These translations are used in the Settings page.
+    settings:
+      allowed_roles_label:        Atanabilen Roller
+      allowed_roles_text:         Kullanıcıların kendilerine hangi rolleri atayabileceğini seçin.
+      other_options_heading:      Diğer Seçenekler
+      allow_multiple_roles_label: Kullanıcıların kendilerine birden fazla rol atayabilmelerine izin ver
+      force_users_label:          Kullanıcıları kendilerine rol atamaya zorla
+      force_users_text:           Aktifleştirildiğinde, yukarıda seçilen rollerden herhangi birine sahip olmayan kullanıcılar, kendilerine bir rol atayana kadar askıya alınacak ve forumu kullanamayacaktır (kullanıcı gruplarını düzenleme iznine sahip olanlar bu durumun dışında tutulacaktır).
+
+  # Translations in this namespace are used by the forum user interface.
+  forum:
+
+    # These translations are used for validation.
+    suspended_temporarily_message: Siz bir kullanıcı grubu seçene kadar bu hesabı geçici olarak askıya aldık.
+    choose_role_button_label:      => the-turk-regrole.ref.choose_a_role
+
+    # These translations are used for validation.
+    required_role_message: Bir kullanıcı grubu seçmelisiniz.
+
+    # These translations are used in the "Choose A Role" modal.
+    choose_role_modal:
+      choose_role_heading: => the-turk-regrole.ref.choose_a_role
+      choose_role_text:    Forumu kullanmaya devam edebilmek için bir kullanıcı grubu seçmelisiniz.
+      save_button:         => core.ref.save_changes
+
+    # These translations are used in the "Sign Up" modal.
+    sign_up_modal:
+      choose_role_heading: => the-turk-regrole.ref.choose_a_role
+
+  ##
+  # REUSED TRANSLATIONS - These keys should not be used directly in code!
+  ##
+
+  # Translations in this namespace are referenced by two or more unique keys.
+  ref:
+    choose_a_role: Bir Grup Seçin

@@ -1,20 +1,17 @@
 <?php
 
 /*
- * This file is part of the-turk/flarum-regrole.
+ * This file is part of Registration Roles.
  *
- * Copyright (c) 2021 Hasan Özbey
- * Copyright (c) 2021 IanM
- *
- * LICENSE: For the full copyright and license information,
- * please view the LICENSE.md file that was distributed
- * with this source code.
+ * For detailed copyright and license information, please view the
+ * LICENSE file that was distributed with this source code.
  */
 
 namespace TheTurk\RegRole\Commands;
 
 use Flarum\Foundation\DispatchEventsTrait;
 use Flarum\User\Event\Saving;
+use Flarum\User\User;
 use Illuminate\Contracts\Events\Dispatcher;
 
 class AttachRoleHandler
@@ -29,13 +26,12 @@ class AttachRoleHandler
         $this->events = $events;
     }
 
-    public function handle(AttachRole $command)
+    public function handle(AttachRole $command): User
     {
         $user = $command->actor;
-        $roleIds = $command->roleIds;
 
         $user->raise(
-            new Saving($user, $user, ['attributes' => ['regRole' => $roleIds]])
+            new Saving($user, $user, ['attributes' => ['regrole_role_ids' => $command->roleIds]])
         );
 
         $this->dispatchEventsFor($user, $user);

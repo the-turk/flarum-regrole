@@ -1,43 +1,53 @@
 <?php
 
 /*
- * This file is part of the-turk/flarum-regrole.
+ * This file is part of Registration Roles.
  *
- * Copyright (c) 2020 Hasan Özbey
- * Copyright (c) 2021 IanM
- *
- * LICENSE: For the full copyright and license information,
- * please view the LICENSE.md file that was distributed
- * with this source code.
+ * For detailed copyright and license information, please view the
+ * LICENSE file that was distributed with this source code.
  */
 
 namespace TheTurk\RegRole;
 
+use Flarum\Api\Serializer\BasicUserSerializer;
+use Flarum\Api\Serializer\GroupSerializer;
+use Flarum\Api\Controller\ShowUserController;
 use Flarum\Extend;
+use Flarum\Group\Group;
 use Flarum\User\Event\Saving as UserSaving;
+use Flarum\User\User;
 use TheTurk\RegRole\Api\Controllers\AttachRoleController;
+use Flarum\Api\Serializer\ForumSerializer;
 
 return [
-    (new Extend\Routes('api'))
-        ->post('/regrole', 'regrole.attach', AttachRoleController::class),
     (new Extend\Frontend('forum'))
         ->css(__DIR__.'/less/forum.less')
         ->js(__DIR__.'/js/dist/forum.js'),
+
     (new Extend\Frontend('admin'))
+        ->css(__DIR__.'/less/admin.less')
         ->js(__DIR__.'/js/dist/admin.js'),
+
     (new Extend\Locales(__DIR__.'/locale')),
+
+    (new Extend\Routes('api'))
+        ->post('/regrole', 'regrole.attach', AttachRoleController::class),
 
     (new Extend\Event())
         ->listen(UserSaving::class, Listeners\SetRoles::class),
 
-    (new Extend\Settings())
-        ->serializeToForum('safeRoles', 'the-turk-regrole.roleIds', function ($value) {
-            if (null === $value) {
-                return [];
-            }
+    (new Extend\User())
+        ->permissionGroups(RevokeAccessFromUsers::class),
 
-            return json_decode($value, true);
-        })
-        ->serializeToForum('multipleRoles', 'the-turk-regrole.multipleRoles', 'boolVal')
-        ->serializeToForum('forceUsers', 'the-turk-regrole.forceUsers', 'boolVal'),
+    (new Extend\ApiSerializer(ForumSerializer::class))
+        ->attributes(LoadSettings::class),
+
+    (new Extend\ApiSerializer(BasicUserSerializer::class))
+        ->hasMany('regrole_all_groups', GroupSerializer::class),
+
+    (new Extend\Model(User::class))
+        ->belongsToMany('regrole_all_groups', Group::class),
+
+    (new Extend\ApiController(ShowUserController::class))
+        ->addInclude('regrole_all_groups'),
 ];

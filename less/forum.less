@@ -1,8 +1,19 @@
-.ChooseRoleModal .regRole--label {
+.RegRole-alert {
+  margin-top: 20px;
+  max-width: 580px;
+
+  @media @phone {
+    margin-top: 65px;
+    max-width: none;
+    border-radius: 0;
+  }
+}
+
+.ChooseRoleModal .regRole-label {
   display: none !important;
 }
 
-.regRole-group .regRole--label {
+.regRole-group .regRole-label {
   margin: 0;
   font-weight: normal;
   color: @control-color;

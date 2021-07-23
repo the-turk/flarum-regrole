@@ -1,14 +1,10 @@
 <?php
 
 /*
- * This file is part of the-turk/flarum-regrole.
+ * This file is part of Registration Roles.
  *
- * Copyright (c) 2021 Hasan Özbey
- * Copyright (c) 2021 IanM
- *
- * LICENSE: For the full copyright and license information,
- * please view the LICENSE.md file that was distributed
- * with this source code.
+ * For detailed copyright and license information, please view the
+ * LICENSE file that was distributed with this source code.
  */
 
 namespace TheTurk\RegRole\Api\Controllers;
@@ -49,7 +45,7 @@ class AttachRoleController extends AbstractShowController
     protected function data(ServerRequestInterface $request, Document $document)
     {
         $actor = $request->getAttribute('actor');
-        $roleIds = Arr::get($request->getParsedBody(), 'regRoleIds', []);
+        $roleIds = Arr::get($request->getParsedBody(), 'regrole_role_ids');
 
         return $this->bus->dispatch(
             new AttachRole($actor, $roleIds)

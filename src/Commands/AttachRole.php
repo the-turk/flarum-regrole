@@ -1,14 +1,10 @@
 <?php
 
 /*
- * This file is part of the-turk/flarum-regrole.
+ * This file is part of Registration Roles.
  *
- * Copyright (c) 2021 Hasan Özbey
- * Copyright (c) 2021 IanM
- *
- * LICENSE: For the full copyright and license information,
- * please view the LICENSE.md file that was distributed
- * with this source code.
+ * For detailed copyright and license information, please view the
+ * LICENSE file that was distributed with this source code.
  */
 
 namespace TheTurk\RegRole\Commands;
