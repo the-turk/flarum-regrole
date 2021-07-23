@@ -9,15 +9,15 @@
 
 namespace TheTurk\RegRole;
 
-use Flarum\Api\Serializer\BasicUserSerializer;
-use Flarum\Api\Serializer\GroupSerializer;
 use Flarum\Api\Controller\ShowUserController;
+use Flarum\Api\Serializer\BasicUserSerializer;
+use Flarum\Api\Serializer\ForumSerializer;
+use Flarum\Api\Serializer\GroupSerializer;
 use Flarum\Extend;
 use Flarum\Group\Group;
 use Flarum\User\Event\Saving as UserSaving;
 use Flarum\User\User;
 use TheTurk\RegRole\Api\Controllers\AttachRoleController;
-use Flarum\Api\Serializer\ForumSerializer;
 
 return [
     (new Extend\Frontend('forum'))
