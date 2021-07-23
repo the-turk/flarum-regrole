@@ -2,7 +2,7 @@
 
 ![alert](https://i.imgur.com/ecW3kCU.png)
 
-From now on, forced users users will be suspended until they choose a role (users with "Edit user groups" permission will be excluded).
+From now on, forced users will be suspended until they choose a role (users with "Edit user groups" permission will be excluded).
 
 - **Fix** hidden groups were not choosable through the extension.
 - **Fix** `GroupsChanged` event was not firing. Now you can see users actions through logger extensions (like the "Audit Log").
