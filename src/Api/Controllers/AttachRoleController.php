@@ -11,10 +11,10 @@ namespace TheTurk\RegRole\Api\Controllers;
 
 use Flarum\Api\Controller\AbstractShowController;
 use Flarum\Api\Serializer\CurrentUserSerializer;
-use TheTurk\RegRole\Commands\AttachRole;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Arr;
 use Psr\Http\Message\ServerRequestInterface;
+use TheTurk\RegRole\Commands\AttachRole;
 use Tobscure\JsonApi\Document;
 
 class AttachRoleController extends AbstractShowController

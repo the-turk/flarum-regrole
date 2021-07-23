@@ -39,8 +39,9 @@ class RevokeAccessFromUsers
     }
 
     /**
-     * @param User $user
+     * @param User  $user
      * @param array $groupIds
+     *
      * @return array
      */
     public function __invoke(User $user, array $groupIds): array

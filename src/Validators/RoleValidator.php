@@ -17,7 +17,7 @@ class RoleValidator extends AbstractValidator
      * {@inheritdoc}
      */
     protected $rules = [
-        'regrole_role_ids' => ['required', 'array']
+        'regrole_role_ids' => ['required', 'array'],
     ];
 
     /**
@@ -26,7 +26,7 @@ class RoleValidator extends AbstractValidator
     protected function getMessages(): array
     {
         return [
-            'required' => $this->translator->trans('the-turk-regrole.forum.required_role_message')
+            'required' => $this->translator->trans('the-turk-regrole.forum.required_role_message'),
         ];
     }
 }

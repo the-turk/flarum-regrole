@@ -46,16 +46,16 @@ class LoadSettings
 
         return [
             'regrole.allow_multiple_roles' => boolval($this->settings->get('the-turk-regrole.allow_multiple_roles', '0')),
-            'regrole.force_users' => boolval($this->settings->get('the-turk-regrole.force_users', '0')),
-            'regrole.allowed_role_ids' => $allowedRoleIds,
-            'regrole.suspended_actor' => $actor && $actor->suspended_until,
-            'regrole.available_roles' =>
+            'regrole.force_users'          => boolval($this->settings->get('the-turk-regrole.force_users', '0')),
+            'regrole.allowed_role_ids'     => $allowedRoleIds,
+            'regrole.suspended_actor'      => $actor && $actor->suspended_until,
+            'regrole.available_roles'      =>
                 // We had to overcome visibility scopes due to `viewHiddenGroups` permission.
                 // @see https://github.com/the-turk/flarum-regrole/issues/13
                 Group::query()
                     ->select('id', 'icon', 'color', 'name_singular')
                     ->whereIn('id', $allowedRoleIds)
-                    ->get()
+                    ->get(),
         ];
     }
 }

@@ -15,8 +15,8 @@ use Flarum\User\Event\GroupsChanged;
 use Flarum\User\Event\Saving as UserSaving;
 use Flarum\User\Exception\PermissionDeniedException;
 use Flarum\User\User;
-use Illuminate\Support\Arr;
 use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Support\Arr;
 use Illuminate\Validation\ValidationException;
 use TheTurk\RegRole\Validators\RoleValidator;
 
@@ -45,9 +45,9 @@ class SetRoles
     private $forceUsers;
 
     /**
-     * @param Dispatcher $events
+     * @param Dispatcher                  $events
      * @param SettingsRepositoryInterface $settings
-     * @param RoleValidator $validator
+     * @param RoleValidator               $validator
      */
     public function __construct(Dispatcher $events, SettingsRepositoryInterface $settings, RoleValidator $validator)
     {
@@ -66,6 +66,7 @@ class SetRoles
 
     /**
      * @param UserSaving $event
+     *
      * @throws PermissionDeniedException|ValidationException
      */
     public function handle(UserSaving $event)
