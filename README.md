@@ -6,7 +6,7 @@ Allow users to assign roles to themselves during registration. You can also forc
 
 ![Registration Roles](https://i.ibb.co/KhFp3hQ/reg-Role-Sign-Up-Modal.png)
 
-[Settings Screenshot](https://i.ibb.co/Nx0wZk5/reg-Role-Settings.png)
+[Settings Screenshot](https://i.imgur.com/U4URUoG.png)
 
 ## Installation
 
@@ -23,7 +23,7 @@ php flarum cache:clear
 
 ## Usage
 
-Enable the extension and set allowed roles from the extension's settings. Also enable the "Force users to assign at least one role to themselves" option to force guests as well as existing users (admins will be excluded) to have at least one of these allowed roles.
+Enable the extension and set allowed roles from the extension's settings. Also enable the "Force users to assign at least one role to themselves" option to force guests as well as existing users (users with "Edit user groups" permission will be excluded) to have at least one of those allowed roles.
 
 **! Attention:** I've tested this extension as much as I can. However, any malfunction of this extension may cause fatal errors during registration and your users might be unable to use your forum. So please test it yourself (register to your forum and login as existing user if you're forcing them to choose a role) after installation to see if everything is working fine for everyone.
 
