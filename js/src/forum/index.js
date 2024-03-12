@@ -35,8 +35,18 @@ app.initializers.add('the-turk-regrole', () => {
       // @see https://github.com/the-turk/flarum-regrole/issues/12
       if (user && !isSuspended && user.canEditGroups() === false) {
         const allowedRoleIds = app.forum.attribute('regrole.allowed_role_ids');
-        const usersGroups = user.regRole_allGroups(); // Gets user's roles regardless of the `viewHiddenGroups` permission.
-        const hasRole = usersGroups.filter((group) => allowedRoleIds.indexOf(group.id()) > -1).length;
+        const groupsData = user.data?.relationships?.groups?.data || [];
+        let usersGroups = []; // Gets user's roles regardless of the `viewHiddenGroups` permission.
+
+        if (groupsData && Array.isArray(groupsData) && groupsData.length) {
+          groupsData.forEach(data => {
+            if (data?.type && data?.id && data.type === 'groups') {
+              usersGroups.push(data.id);
+            }
+          })
+        }
+
+        const hasRole = usersGroups && usersGroups.filter((groupId) => allowedRoleIds.indexOf(groupId) > -1).length;
 
         if (!hasRole) {
           // Welcome user with the "Choose A Role" modal on every page init.
